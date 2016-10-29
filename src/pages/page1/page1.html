@@ -1,18 +1,35 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Page One</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Page One</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+    <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <p>
+        If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+    </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <button ion-button primary (click)="addContact()">Kontakt wählen</button>
+
+    <pre>
+        {{contact | json}}
+    </pre>
+
+    <!--<p>-->
+        <!--Name: {{contact.displayName}}-->
+    <!--</p>-->
+
+    <!--<div [hidden]="!contact">-->
+        <!--<ion-list>-->
+            <!--<ion-item>Name: {{contact.displayName}}</ion-item>-->
+            <!--<ion-item *ngFor="let number of contact.phoneNumbers">-->
+                <!--{{number | json}}-->
+            <!--</ion-item>-->
+        <!--</ion-list>-->
+    <!--</div>-->
 </ion-content>
