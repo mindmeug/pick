@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar primary>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      Home
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleEdit()">
+        <ion-icon [hidden]="edit" name="create"></ion-icon>
+        <ion-icon [hidden]="!edit" name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item *ngFor="let contact of contacts" (click)="contactAction(contact)">
+      <ion-avatar item-left>
+        <img [src]="contact.image">
+      </ion-avatar>
+      <h2>{{contact.name}}</h2>
+      <p>{{contact.number}}</p>
+    </ion-item>
+    <ion-item [hidden]="!edit" (click)="addItem()">
+      <ion-avatar item-left>
+        <img src="assets/add.png">
+      </ion-avatar>
+      <h2>Neuer Kontakt hinzufügen</h2>
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>
